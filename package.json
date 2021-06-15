@@ -1,0 +1,34 @@
+{
+  "name": "holiday-avatar",
+  "version": "1.0.0",
+  "description": "Vue library for generating nice user avatar.(Inspired by react-nice-avatar)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wjq990112/holiday-avatar.git"
+  },
+  "keywords": [
+    "vue",
+    "avatar",
+    "vue-avatar",
+    "avatar-generator",
+    "avatar-placeholder"
+  ],
+  "author": "wjq990112",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wjq990112/holiday-avatar/issues"
+  },
+  "homepage": "https://github.com/wjq990112/holiday-avatar#readme",
+  "dependencies": {
+    "vitepress": "^0.15.2"
+  }
+}
