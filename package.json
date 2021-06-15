@@ -1,15 +1,20 @@
 {
   "name": "holiday-avatar",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.2",
   "description": "Vue library for generating nice user avatar.(Inspired by react-nice-avatar)",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/holiday-avatar.umd.js",
+  "module": "./dist/holiday-avatar.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/holiday-avatar.es.js",
+      "require": "./dist/holiday-avatar.umd.js"
+    }
   },
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -22,13 +27,31 @@
     "avatar-generator",
     "avatar-placeholder"
   ],
-  "author": "wjq990112",
+  "author": "wjq990112<1163585385@qq.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wjq990112/holiday-avatar/issues"
   },
   "homepage": "https://github.com/wjq990112/holiday-avatar#readme",
   "dependencies": {
-    "vitepress": "^0.15.2"
+    "chroma-js": "^2.1.2",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^15.12.2",
+    "@vitejs/plugin-vue": "^1.2.3",
+    "@vue/babel-plugin-jsx": "^1.0.6",
+    "@vue/compiler-sfc": "^3.0.5",
+    "typescript": "^4.1.3",
+    "vite": "^2.3.5",
+    "vue-tsc": "^0.0.24"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
   }
 }
