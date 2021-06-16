@@ -34,16 +34,15 @@ export default defineConfig({
   external: ['vue'],
   plugins: [
     alias({
-      entries: [
-        {
-          find: '@',
-          replacement: path.resolve(__dirname, 'src'),
-        },
-      ],
+      entries: {
+        '@': path.resolve(__dirname, 'src'),
+      },
     }),
     resolve(),
     commonjs(),
-    typescript({ tsconfig: './tsconfig.json' }),
+    //! @rollup/plugin-typescript will not use `tsconfig.json` by default.
+    //! Issue: https://github.com/rollup/plugins/issues/394
+    typescript(),
     babel({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
