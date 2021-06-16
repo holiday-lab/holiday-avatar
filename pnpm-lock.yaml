@@ -1,11 +1,12 @@
 dependencies:
   chroma-js: registry.nlark.com/chroma-js/2.1.2
-  lodash: 4.17.21
 devDependencies:
   '@babel/core': registry.nlark.com/@babel/core/7.14.6
   '@babel/preset-env': 7.14.5_@babel+core@7.14.6
   '@babel/preset-typescript': 7.14.5_@babel+core@7.14.6
   '@rollup/plugin-babel': 5.3.0_@babel+core@7.14.6
+  '@rollup/plugin-commonjs': registry.nlark.com/@rollup/plugin-commonjs/19.0.0
+  '@rollup/plugin-node-resolve': registry.nlark.com/@rollup/plugin-node-resolve/13.0.0
   '@types/lodash': registry.nlark.com/@types/lodash/4.14.170
   '@types/node': registry.nlark.com/@types/node/15.12.2
   '@vitejs/plugin-vue': registry.nlark.com/@vitejs/plugin-vue/1.2.3_@vue+compiler-sfc@3.1.1
@@ -1194,20 +1195,17 @@ packages:
       integrity: sha512-9uIC8HZOnVLrLHxayq/PTzw+uS25E14KPUBh5ktF+18Mjo5yK0ToMMx6epY0uEgkjwJw0aBW4x2horYXh8juWw==
   /@rollup/pluginutils/3.1.0:
     dependencies:
-      '@types/estree': 0.0.39
+      '@types/estree': registry.nlark.com/@types/estree/0.0.39
       estree-walker: 1.0.1
-      picomatch: 2.3.0
+      picomatch: registry.nlark.com/picomatch/2.3.0
     dev: true
     engines:
       node: '>= 8.0.0'
     peerDependencies:
       rollup: ^1.20.0||^2.0.0
     resolution:
-      integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==
-  /@types/estree/0.0.39:
-    dev: true
-    resolution:
-      integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
+      integrity: sha1-cGtFJO5tyLEDs8mVUz5a1oDAK5s=
+      tarball: '@rollup/pluginutils/download/@rollup/pluginutils-3.1.0.tgz'
   /@vue/babel-helper-vue-transform-on/1.0.2:
     dev: true
     resolution:
@@ -1338,6 +1336,13 @@ packages:
     resolution:
       integrity: sha1-skV5w77U1tOWru5tmorn9Ugqt7s=
       tarball: buffers/download/buffers-0.1.1.tgz
+  /builtin-modules/3.2.0:
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha1-RdXbmefuXmvE82LgCL+RerUEmIc=
+      tarball: builtin-modules/download/builtin-modules-3.2.0.tgz
   /call-bind/1.0.2:
     dependencies:
       function-bind: 1.1.1
@@ -1390,6 +1395,11 @@ packages:
     resolution:
       integrity: sha1-y8x51emcrqLb8Q6zom/Ys+as+pQ=
       tarball: colorette/download/colorette-1.2.2.tgz
+  /commondir/1.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-3dgA2gxmEnOTzKWVDqloo6rxJTs=
+      tarball: commondir/download/commondir-1.0.1.tgz
   /concat-map/0.0.1:
     dev: true
     resolution:
@@ -1458,9 +1468,21 @@ packages:
     dev: true
     engines:
       node: '>=6.0'
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     resolution:
       integrity: sha1-8NIpxQXgxtjEmsVT0bE9wYP2su4=
       tarball: debug/download/debug-4.3.1.tgz
+  /deepmerge/4.2.2:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-RNLqNnm49NT/ujPwPYZfwee/SVU=
+      tarball: deepmerge/download/deepmerge-4.2.2.tgz?cache=0&sync_timestamp=1615986658392&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdeepmerge%2Fdownload%2Fdeepmerge-4.2.2.tgz
   /define-properties/1.1.3:
     dependencies:
       object-keys: 1.1.1
@@ -1504,7 +1526,8 @@ packages:
   /estree-walker/1.0.1:
     dev: true
     resolution:
-      integrity: sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg==
+      integrity: sha1-MbxdYSyWtwQQa0d+bdXYqhOMtwA=
+      tarball: estree-walker/download/estree-walker-1.0.1.tgz
   /estree-walker/2.0.2:
     dev: true
     resolution:
@@ -1544,7 +1567,8 @@ packages:
   /function-bind/1.1.1:
     dev: true
     resolution:
-      integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
+      integrity: sha1-pWiZ0+o8m6uHS7l3O3xe3pL0iV0=
+      tarball: function-bind/download/function-bind-1.1.1.tgz
   /generic-names/2.0.1:
     dependencies:
       loader-utils: 1.4.0
@@ -1598,7 +1622,8 @@ packages:
     engines:
       node: '>= 0.4.0'
     resolution:
-      integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
+      integrity: sha1-ci18v8H2qoJB8W3YFOAR4fQeh5Y=
+      tarball: has/download/has-1.0.3.tgz
   /hash-sum/2.0.0:
     dev: true
     resolution:
@@ -1640,12 +1665,11 @@ packages:
     resolution:
       integrity: sha1-D6LGT5MpF8NDOg3tVTY6rjdBa3w=
       tarball: inherits/download/inherits-2.0.4.tgz
-  /is-core-module/2.4.0:
-    dependencies:
-      has: 1.0.3
+  /is-module/1.0.0:
     dev: true
     resolution:
-      integrity: sha512-6A2fkfq1rfeQZjxrZJGerpLCTHRNEBiSgnu0+obeJpEPZRUooHgsizvzv0ZjJwOz3iWIHdJtVWJ/tmPr3D21/A==
+      integrity: sha1-Mlj7afeMFNW4FdZkM2tM/7ZEFZE=
+      tarball: is-module/download/is-module-1.0.0.tgz
   /isarray/1.0.0:
     dev: true
     resolution:
@@ -1716,11 +1740,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=
-  /lodash/4.17.21:
-    dev: false
-    resolution:
-      integrity: sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=
-      tarball: lodash/download/lodash-4.17.21.tgz?cache=0&sync_timestamp=1615986569444&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash%2Fdownload%2Flodash-4.17.21.tgz
   /lru-cache/5.1.1:
     dependencies:
       yallist: 3.1.1
@@ -1809,16 +1828,6 @@ packages:
     resolution:
       integrity: sha1-WB9q3mWMu6ZaDTOA3ndTKVBU83U=
       tarball: path-key/download/path-key-3.1.1.tgz?cache=0&sync_timestamp=1617971828142&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpath-key%2Fdownload%2Fpath-key-3.1.1.tgz
-  /path-parse/1.0.7:
-    dev: true
-    resolution:
-      integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
-  /picomatch/2.3.0:
-    dev: true
-    engines:
-      node: '>=8.6'
-    resolution:
-      integrity: sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==
   /postcss-modules-extract-imports/3.0.0_postcss@8.3.4:
     dependencies:
       postcss: registry.nlark.com/postcss/8.3.4
@@ -1939,11 +1948,12 @@ packages:
       integrity: sha512-ZqbNRz1SNjLAiYuwY0zoXW8Ne675IX5q+YHioAGbCw4X96Mjl2+dcX9B2ciaeyYjViDAfvIjFpQjJgLttTEERQ==
   /resolve/1.20.0:
     dependencies:
-      is-core-module: 2.4.0
-      path-parse: 1.0.7
+      is-core-module: registry.nlark.com/is-core-module/2.4.0
+      path-parse: registry.nlark.com/path-parse/1.0.7
     dev: true
     resolution:
-      integrity: sha512-wENBPt4ySzg4ybFQW2TT1zMQucPK95HSh/nq2CFTZVOGut2+pQvSsgtda4d26YrYcr067wjbmzOG8byDPBX63A==
+      integrity: sha1-YpoBP7P3B1XW8LeTXMHCxTeLGXU=
+      tarball: resolve/download/resolve-1.20.0.tgz
   /rimraf/2.7.1:
     dependencies:
       glob: registry.nlark.com/glob/7.1.7
@@ -2404,6 +2414,61 @@ packages:
       registry: https://registry.npm.taobao.org/
       tarball: https://registry.nlark.com/@babel/types/download/@babel/types-7.14.5.tgz
     version: 7.14.5
+  registry.nlark.com/@rollup/plugin-commonjs/19.0.0:
+    dependencies:
+      '@rollup/pluginutils': 3.1.0
+      commondir: 1.0.1
+      estree-walker: 2.0.2
+      glob: registry.nlark.com/glob/7.1.7
+      is-reference: registry.nlark.com/is-reference/1.2.1
+      magic-string: 0.25.7
+      resolve: 1.20.0
+    dev: true
+    engines:
+      node: '>= 8.0.0'
+    name: '@rollup/plugin-commonjs'
+    peerDependencies:
+      rollup: ^2.38.3
+    resolution:
+      integrity: sha1-jD5x+aZpCOYNcMwb4gWDTvPkX3E=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/@rollup/plugin-commonjs/download/@rollup/plugin-commonjs-19.0.0.tgz
+    version: 19.0.0
+  registry.nlark.com/@rollup/plugin-node-resolve/13.0.0:
+    dependencies:
+      '@rollup/pluginutils': 3.1.0
+      '@types/resolve': registry.nlark.com/@types/resolve/1.17.1
+      builtin-modules: 3.2.0
+      deepmerge: 4.2.2
+      is-module: 1.0.0
+      resolve: 1.20.0
+    dev: true
+    engines:
+      node: '>= 10.0.0'
+    name: '@rollup/plugin-node-resolve'
+    peerDependencies:
+      rollup: ^2.42.0
+    resolution:
+      integrity: sha1-NS8H5DD/N3gJ7I7Ipv1jZUcWLcQ=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/@rollup/plugin-node-resolve/download/@rollup/plugin-node-resolve-13.0.0.tgz
+    version: 13.0.0
+  registry.nlark.com/@types/estree/0.0.39:
+    dev: true
+    name: '@types/estree'
+    resolution:
+      integrity: sha1-4Xfmme4bjCLSMXTKqnQiZEOJUJ8=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/@types/estree/download/@types/estree-0.0.39.tgz
+    version: 0.0.39
+  registry.nlark.com/@types/estree/0.0.48:
+    dev: true
+    name: '@types/estree'
+    resolution:
+      integrity: sha1-GNyAkbKF35DbLyWqfZBs/DlLf3Q=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/@types/estree/download/@types/estree-0.0.48.tgz
+    version: 0.0.48
   registry.nlark.com/@types/lodash/4.14.170:
     dev: true
     name: '@types/lodash'
@@ -2420,6 +2485,16 @@ packages:
       registry: https://registry.npm.taobao.org/
       tarball: https://registry.nlark.com/@types/node/download/@types/node-15.12.2.tgz?cache=0&sync_timestamp=1623109656934&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-15.12.2.tgz
     version: 15.12.2
+  registry.nlark.com/@types/resolve/1.17.1:
+    dependencies:
+      '@types/node': registry.nlark.com/@types/node/15.12.2
+    dev: true
+    name: '@types/resolve'
+    resolution:
+      integrity: sha1-Ov1q2JZ8d+Q3bFmKgt3Vj0bsRdY=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/@types/resolve/download/@types/resolve-1.17.1.tgz
+    version: 1.17.1
   registry.nlark.com/@vitejs/plugin-vue/1.2.3_@vue+compiler-sfc@3.1.1:
     dependencies:
       '@vue/compiler-sfc': registry.nlark.com/@vue/compiler-sfc/3.1.1
@@ -2618,6 +2693,26 @@ packages:
       registry: https://registry.npm.taobao.org/
       tarball: https://registry.nlark.com/globals/download/globals-11.12.0.tgz
     version: 11.12.0
+  registry.nlark.com/is-core-module/2.4.0:
+    dependencies:
+      has: 1.0.3
+    dev: true
+    name: is-core-module
+    resolution:
+      integrity: sha1-jp/I4VAnsBFBgCbpjw5vTYYwXME=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/is-core-module/download/is-core-module-2.4.0.tgz
+    version: 2.4.0
+  registry.nlark.com/is-reference/1.2.1:
+    dependencies:
+      '@types/estree': registry.nlark.com/@types/estree/0.0.48
+    dev: true
+    name: is-reference
+    resolution:
+      integrity: sha1-iy2sCzcfS8mU/eq6nrVC0DAC0Lc=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/is-reference/download/is-reference-1.2.1.tgz
+    version: 1.2.1
   registry.nlark.com/js-tokens/4.0.0:
     dev: true
     name: js-tokens
@@ -2645,6 +2740,24 @@ packages:
       registry: https://registry.npm.taobao.org/
       tarball: https://registry.nlark.com/node-releases/download/node-releases-1.1.73.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fnode-releases%2Fdownload%2Fnode-releases-1.1.73.tgz
     version: 1.1.73
+  registry.nlark.com/path-parse/1.0.7:
+    dev: true
+    name: path-parse
+    resolution:
+      integrity: sha1-+8EUtgykKzDZ2vWFjkvWi77bZzU=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/path-parse/download/path-parse-1.0.7.tgz
+    version: 1.0.7
+  registry.nlark.com/picomatch/2.3.0:
+    dev: true
+    engines:
+      node: '>=8.6'
+    name: picomatch
+    resolution:
+      integrity: sha1-8fBh3o9qS/AiiS4tEoI0+5gwKXI=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/picomatch/download/picomatch-2.3.0.tgz
+    version: 2.3.0
   registry.nlark.com/postcss-modules/4.1.3_postcss@8.3.4:
     dependencies:
       generic-names: 2.0.1
@@ -2808,13 +2921,14 @@ specifiers:
   '@babel/preset-env': ^7.14.5
   '@babel/preset-typescript': ^7.14.5
   '@rollup/plugin-babel': ^5.3.0
+  '@rollup/plugin-commonjs': ^19.0.0
+  '@rollup/plugin-node-resolve': ^13.0.0
   '@types/lodash': ^4.14.170
   '@types/node': ^15.12.2
   '@vitejs/plugin-vue': ^1.2.3
   '@vue/babel-plugin-jsx': ^1.0.6
   '@vue/compiler-sfc': ^3.0.5
   chroma-js: ^2.1.2
-  lodash: ^4.17.21
   typescript: ^4.1.3
   vite: ^2.3.5
   vue-tsc: ^0.0.24

@@ -10,6 +10,7 @@ import pkg from './package.json';
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
+    minify: false,
     lib: {
       entry: path.resolve(__dirname, 'src/index.tsx'),
       name: 'holiday-avatar',
@@ -18,6 +19,9 @@ export default defineConfig({
       external: Object.keys(pkg.peerDependencies),
       output: {
         exports: 'named',
+        globals: {
+          vue: 'Vue',
+        },
       },
       plugins: [
         babel({
