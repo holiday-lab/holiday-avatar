@@ -1,6 +1,4 @@
-function startCase(str: string) {
-  return str.slice(0, 1).toUpperCase() + str.slice(1);
-}
+import startCase from 'lodash/startCase';
 
 /**
  * 快速获取组件名称
