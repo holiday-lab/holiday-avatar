@@ -34,6 +34,10 @@ yarn add holiday-avatar
 pnpm install holiday-avatar
 ```
 
+## Usage
+
+TODO
+
 ## License
 
 Released under [MIT](/LICENSE) by [@wjq990112](https://github.com/wjq990112).
