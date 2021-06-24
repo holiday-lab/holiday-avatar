@@ -106,7 +106,13 @@ declare const Avatar: vue.DefineComponent<
   }
 >;
 
-export default Avatar;
+declare type WithInstall = (app: vue.App) => void;
+
+declare const withInstall: <T extends vue.Component>(
+  component: T,
+) => WithInstall;
+
+export default withInstall;
 export {
   Avatar,
   AvatarSex,
