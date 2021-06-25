@@ -106,7 +106,22 @@ or
 
 ## Options
 
-TODO
+| key               | type      | default  | accept                                           | tips |
+| ----------------- | --------- | -------- | ------------------------------------------------ | ---- |
+| `bgColor`         | `string`  |          |                                                  |      |
+| `faceColor`       | `string`  |          |                                                  |      |
+| `hairColor`       | `string`  |          |                                                  |      |
+| `shirtColor`      | `string`  |          |                                                  |      |
+| `hairColorRandom` | `boolean` |          |                                                  |      |
+| `sex`             | `string`  |          | `male, female`                                   |      |
+| `earSize`         | `string`  |          | `small, big`                                     |      |
+| `eyeType`         | `string`  |          | `circle, oval, smile`                            |      |
+| `hairType`        | `string`  |          | `normal, thick, mohawk, femaleLong, femaleShort` |      |
+| `noseType`        | `string`  |          | `short, long, round`                             |      |
+| `mouthType`       | `string`  |          | `laugh, smile, peace`                            |      |
+| `shirtType`       | `string`  |          | `hoody, short, polo`                             |      |
+| `glassesType`     | `string`  |          | `none, round, square`                            |      |
+| `shape`           | `string`  | `circle` | `circle, rounded, square`                        |      |
 
 ## License
 
