@@ -36,6 +36,76 @@ pnpm install holiday-avatar
 
 ## Usage
 
+### Import Directly (Recommended)
+
+You can import component directly and use it. In this form, only components imported will be bundled.
+
+```vue
+<template>
+  <HldAvatar />
+</template>
+
+<script>
+import { defineComponent } from 'vue';
+import { Avatar } from 'holiday-avatar';
+
+export default defineComponent({
+  components: {
+    HldAvatar: Avatar,
+  },
+});
+</script>
+```
+
+or
+
+```vue
+<template>
+  <hld-avatar></hld-avatar>
+</template>
+
+<script>
+import { defineComponent } from 'vue';
+import { Avatar } from 'holiday-avatar';
+
+export default defineComponent({
+  components: {
+    HldAvatar: Avatar,
+  },
+});
+</script>
+```
+
+### Install Globally (Not Recommended)
+
+No tree-shaking. Bundle will have redundant codes.
+
+```ts
+import { createApp } from 'vue';
+import App from './App.vue';
+import Avatar from 'holiday-avatar';
+
+createApp(App).use(Avatar).mount('#app');
+```
+
+After the installation. You can use all the components in you SFC like this.
+
+```vue
+<template>
+  <hld-avatar></hld-avatar>
+</template>
+```
+
+or
+
+```vue
+<template>
+  <HldAvatar />
+</template>
+```
+
+## Options
+
 TODO
 
 ## License
