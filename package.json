@@ -1,6 +1,6 @@
 {
   "name": "holiday-avatar",
-  "version": "0.0.2-beta.2",
+  "version": "0.0.2-beta.4",
   "description": "Vue library for generating nice user avatar. (Inspired by react-nice-avatar)",
   "files": [
     "dist"

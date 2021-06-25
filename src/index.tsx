@@ -1,8 +1,9 @@
-import withInstall from '@/utils/withInstall';
+import withInstall from './utils/withInstall';
 import Avatar, { genConfig } from './Avatar';
 
 export default withInstall(Avatar);
 export { Avatar, genConfig };
+export type { WithInstall } from './utils/withInstall';
 export type { EarSize } from './Ear';
 export type { EyesType } from './Eyes';
 export type { HairType } from './Hair';

@@ -42,7 +42,7 @@ export default defineConfig({
     commonjs(),
     //! @rollup/plugin-typescript will not use `tsconfig.json` by default.
     //! Issue: https://github.com/rollup/plugins/issues/394
-    typescript(),
+    typescript({ tsconfig: './tsconfig.json' }),
     babel({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',

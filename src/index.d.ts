@@ -23,11 +23,14 @@ declare type EyeBrowType = 'upMale' | 'upFemale';
 declare type GlassesType = 'none' | 'round' | 'square';
 
 declare type AvatarShape = 'circle' | 'rounded' | 'square';
+
 declare type AvatarSex = 'male' | 'female';
+
 interface Options<T> {
   avoidList?: T[];
   usually?: T[];
 }
+
 interface Configs {
   sex?: AvatarSex;
   bgColor?: string;
@@ -43,9 +46,13 @@ interface Configs {
   eyeBrowType?: EyeBrowType;
   glassesType?: GlassesType;
 }
+
 declare type PickRandomFromList = <T>(data: T[], options?: Options<T>) => T;
+
 declare type GenConfig = (configs?: Configs) => Configs;
+
 declare const genConfig: GenConfig;
+
 declare const Avatar: vue.DefineComponent<
   {
     id: StringConstructor;
@@ -106,14 +113,16 @@ declare const Avatar: vue.DefineComponent<
   }
 >;
 
-declare type WithInstall = (app: vue.App) => void;
+type WithInstall = {
+  install: (app: vue.App) => void;
+};
 
-declare const withInstall: <T extends vue.Component>(
-  component: T,
-) => WithInstall;
+declare const _default: WithInstall;
 
-export default withInstall;
+export default _default;
+
 export {
+  WithInstall,
   Avatar,
   AvatarSex,
   AvatarShape,
