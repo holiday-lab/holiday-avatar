@@ -112,7 +112,7 @@ or
 | `faceColor`       | `string`  |          |                                                  |      |
 | `hairColor`       | `string`  |          |                                                  |      |
 | `shirtColor`      | `string`  |          |                                                  |      |
-| `hairColorRandom` | `boolean` |          |                                                  |      |
+| `hairColorRandom` | `boolean` | `false`  |                                                  |      |
 | `sex`             | `string`  |          | `male, female`                                   |      |
 | `earSize`         | `string`  |          | `small, big`                                     |      |
 | `eyeType`         | `string`  |          | `circle, oval, smile`                            |      |
