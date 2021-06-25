@@ -17,7 +17,7 @@ export default function withInstall<T extends Component>(
 ): WithInstall {
   return {
     install: (app: App) => {
-      const prefixName = 'Holiday';
+      const prefixName = 'Hld';
       const { name } = component;
       const fullName = prefixName + name;
       app.component(fullName, component);
