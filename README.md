@@ -92,7 +92,7 @@ After the installation. You can use all the components in you SFC like this.
 
 ```vue
 <template>
-  <hld-avatar></hld-avatar>
+  <HldAvatar />
 </template>
 ```
 
@@ -100,11 +100,149 @@ or
 
 ```vue
 <template>
-  <HldAvatar />
+  <hld-avatar></hld-avatar>
 </template>
 ```
 
+### Generate Config
+
+Generate random config, the config can be saved into your database to use later.
+
+```vue
+<template>
+  <HldAvatar v-bind="{ ...config }" />
+</template>
+
+<script>
+import { defineComponent } from 'vue';
+import { Avatar, genConfig } from 'holiday-avatar';
+
+export default defineComponent({
+  components: {
+    HldAvatar: Avatar,
+  },
+  setup() {
+    const config = genConfig();
+
+    return {
+      config,
+    };
+  },
+});
+</script>
+```
+
+If you need to customize the configuration, there are two ways to provide you with the ability to customize.
+
+```vue
+<template>
+  <HldAvatar v-bind="{ ...config }" />
+</template>
+
+<script>
+import { defineComponent } from 'vue';
+import { Avatar, genConfig } from 'holiday-avatar';
+
+export default defineComponent({
+  components: {
+    HldAvatar: Avatar,
+  },
+  setup() {
+    // You can also pass in other options in the option list below. e.g. `{ sex: 'female', eyeType: 'smile' }`
+    const config = genConfig({ bgColor: '#000' });
+
+    return {
+      config,
+    };
+  },
+});
+</script>
+```
+
+or
+
+```vue
+<template>
+  <!-- You can also pass in other options in the option list below with kebab-case. e.g. `sex="female" eye-type="smile"` -->
+  <HldAvatar v-bind="{ ...config }" bg-color="#000" />
+</template>
+
+<script>
+import { defineComponent } from 'vue';
+import { Avatar, genConfig } from 'holiday-avatar';
+
+export default defineComponent({
+  components: {
+    HldAvatar: Avatar,
+  },
+  setup() {
+    const config = genConfig();
+
+    return {
+      config,
+    };
+  },
+});
+</script>
+```
+
+> **NOTE: The latter option will override the previous!**
+
+```vue
+<template>
+  <!-- `bg-color` will be overridden as `#fff` -->
+  <HldAvatar v-bind="{ ...config }" bg-color="#fff" />
+</template>
+
+<script>
+import { defineComponent } from 'vue';
+import { Avatar, genConfig } from 'holiday-avatar';
+
+export default defineComponent({
+  components: {
+    HldAvatar: Avatar,
+  },
+  setup() {
+    const config = genConfig({ bgColor: '#000' });
+
+    return {
+      config,
+    };
+  },
+});
+</script>
+```
+
+Same as above.
+
+```vue
+<template>
+  <!-- `bg-color` will be overridden as `#000` -->
+  <HldAvatar bg-color="#fff" v-bind="{ ...config }" />
+</template>
+
+<script>
+import { defineComponent } from 'vue';
+import { Avatar, genConfig } from 'holiday-avatar';
+
+export default defineComponent({
+  components: {
+    HldAvatar: Avatar,
+  },
+  setup() {
+    const config = genConfig({ bgColor: '#000' });
+
+    return {
+      config,
+    };
+  },
+});
+</script>
+```
+
 ## Options
+
+The options can be passed into `genConfig` or as Vue props.
 
 | key               | type      | default  | accept                                           | tips |
 | ----------------- | --------- | -------- | ------------------------------------------------ | ---- |
