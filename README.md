@@ -1,5 +1,7 @@
 # holiday-avatar
 
+## Introduction
+
 Vue library for generating nice user avatar. (Inspired by react-nice-avatar)
 
 [![Version](http://img.shields.io/npm/v/holiday-avatar.svg)](https://www.npmjs.org/package/react-nice-avatar)
@@ -15,7 +17,7 @@ Vue library for generating nice user avatar. (Inspired by react-nice-avatar)
     </a>
 </div>
 
-## Online editor / preview
+## Online Editor / Preview
 
 - https://nice-avatar.chilllab.io/
 

@@ -16,6 +16,7 @@ export default defineConfig({
     {
       exports: 'named',
       file: pkg.module,
+      name: 'holiday-avatar',
       format: 'esm',
       globals: {
         vue: 'Vue',
