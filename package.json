@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "rimraf demo/dist && NODE_ENV=development rollup -w -c rollup.config.demo.ts",
     "build:pkg": "rimraf dist && rollup -c && copyfiles -f src/index.d.ts dist",
-    "build:docs": "rimraf demo/dist && rollup -c rollup.config.demo.ts"
+    "build:demo": "rimraf demo/dist && rollup -c rollup.config.demo.ts"
   },
   "repository": {
     "type": "git",
