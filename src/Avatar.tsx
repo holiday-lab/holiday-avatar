@@ -64,7 +64,13 @@ const hairColor = [
   '#506af4',
   '#f48150',
 ];
-const hairTypeMale: HairType[] = ['normal', 'thick', 'mohawk'];
+const hairTypeMale: HairType[] = [
+  'normal',
+  'beanie',
+  'thick',
+  'mohawk',
+  'turban',
+];
 const hairTypeFemale: HairType[] = ['normal', 'femaleLong', 'femaleShort'];
 const eyeBrowFemale: EyeBrowType[] = ['upMale', 'upFemale'];
 const eyeType: EyesType[] = ['circle', 'oval', 'smile'];

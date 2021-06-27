@@ -7,8 +7,10 @@ declare type EyesType = 'circle' | 'oval' | 'smile';
 
 declare type HairType =
   | 'normal'
+  | 'beanie'
   | 'thick'
   | 'mohawk'
+  | 'turban'
   | 'femaleLong'
   | 'femaleShort';
 

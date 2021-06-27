@@ -26,18 +26,18 @@ export default defineComponent({
   },
 
   setup(props) {
-    const secondColor = chroma(props.color as string)
+    const subColor = chroma(props.color as string)
       .brighten(BRIGHTEN_DEGREE)
       .hex();
 
     const renderShirt = () => {
       switch (props.type) {
         case 'hoody':
-          return <Hoody color={props.color} lightColor={secondColor} />;
+          return <Hoody color={props.color} lightColor={subColor} />;
         case 'short':
           return <Short color={props.color} />;
         case 'polo':
-          return <Polo color={props.color} lightColor={secondColor} />;
+          return <Polo color={props.color} lightColor={subColor} />;
         default:
           return <Short color={props.color} />;
       }
