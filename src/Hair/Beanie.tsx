@@ -13,18 +13,18 @@ export default defineComponent({
 
     return () => (
       <svg
-        xmlns="http://www.w3.org/2000/svg"
         style={{
           position: 'absolute',
-          bottom: '31%',
+          bottom: '32%',
           width: '50%',
           height: '85%',
           left: '22%',
         }}
-        width="640px"
-        height="508px"
+        width="640"
+        height="508"
         viewBox="0 0 640 508"
         preserveAspectRatio="xMidYMid meet"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <defs />
         <path
