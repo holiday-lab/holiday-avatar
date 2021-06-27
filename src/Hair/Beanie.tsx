@@ -15,7 +15,7 @@ export default defineComponent({
       <svg
         style={{
           position: 'absolute',
-          bottom: '32%',
+          bottom: '35%',
           width: '50%',
           height: '85%',
           left: '22%',
