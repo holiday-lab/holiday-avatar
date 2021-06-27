@@ -34,11 +34,12 @@ interface Options<T> {
 }
 
 interface Configs {
-  sex?: AvatarSex;
   bgColor?: string;
   faceColor?: string;
   hairColor?: string;
   shirtColor?: string;
+  hairColorRandom?: boolean;
+  sex?: AvatarSex;
   earSize?: EarSize;
   eyeType?: EyesType;
   hairType?: HairType;
@@ -47,6 +48,7 @@ interface Configs {
   shirtType?: ShirtType;
   eyeBrowType?: EyeBrowType;
   glassesType?: GlassesType;
+  shape?: AvatarShape;
 }
 
 declare type PickRandomFromList = <T>(data: T[], options?: Options<T>) => T;
