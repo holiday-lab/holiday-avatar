@@ -18,7 +18,7 @@ export default defineConfig({
   input: 'demo/src/main.ts',
   output: {
     file: 'demo/dist/index.js',
-    format: 'esm',
+    format: 'iife',
     sourcemap: true,
   },
   plugins: [
@@ -46,7 +46,6 @@ export default defineConfig({
     terser(),
     isEnvDevelopment &&
       serve({
-        open: true,
         contentBase: ['demo'],
         port: 5000,
       }),
