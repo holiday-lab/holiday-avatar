@@ -163,7 +163,7 @@ export default defineComponent({
 </script>
 ```
 
-or
+或者
 
 ```vue
 <template>
