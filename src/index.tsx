@@ -5,6 +5,7 @@ export default withInstall(Avatar);
 export { Avatar, genConfig };
 export type { WithInstall } from './utils/withInstall';
 export type { EarSize } from './Ear';
+export type { HatType } from './Hat'
 export type { EyesType } from './Eyes';
 export type { HairType } from './Hair';
 export type { NoseType } from './Nose';
