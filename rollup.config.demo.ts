@@ -1,7 +1,7 @@
 import { defineConfig } from 'rollup';
 import path from 'path';
 
-import vue from 'rollup-plugin-vue';
+import scss from 'rollup-plugin-scss';
 import serve from 'rollup-plugin-serve';
 import alias from '@rollup/plugin-alias';
 import babel from '@rollup/plugin-babel';
@@ -22,7 +22,12 @@ export default defineConfig({
     sourcemap: true,
   },
   plugins: [
-    vue(),
+    scss({
+      output: 'demo/dist/index.css',
+      sourceMap: true,
+      watch: ['demo/src/**'],
+      sass: require('sass'),
+    }),
     replace({
       preventAssignment: true,
       __VUE_OPTIONS_API__: JSON.stringify(true),
@@ -31,7 +36,7 @@ export default defineConfig({
     }),
     alias({
       entries: {
-        '@': path.resolve(__dirname, 'demo/src'),
+        'holiday-avatar': path.resolve(__dirname, 'src'),
       },
     }),
     resolve(),
@@ -42,6 +47,16 @@ export default defineConfig({
     babel({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
+      presets: ['@babel/preset-env', '@babel/preset-typescript'],
+      plugins: [
+        [
+          '@vue/babel-plugin-jsx',
+          {
+            optimize: true,
+          },
+        ],
+      ],
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
     terser(),
     isEnvDevelopment &&
@@ -52,7 +67,7 @@ export default defineConfig({
     isEnvDevelopment && livereload({ watch: 'demo' }),
   ],
   watch: {
-    include: 'demo/**',
+    include: ['demo/src/**', 'src/**'],
     exclude: 'node_modules/**',
   },
 });

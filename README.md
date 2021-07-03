@@ -246,22 +246,24 @@ export default defineComponent({
 
 The options can be passed into `genConfig` or as Vue props.
 
-| key               | type      | default  | accept                                                           | tips |
-| ----------------- | --------- | -------- | ---------------------------------------------------------------- | ---- |
-| `bgColor`         | `string`  |          |                                                                  |      |
-| `faceColor`       | `string`  |          |                                                                  |      |
-| `hairColor`       | `string`  |          |                                                                  |      |
-| `shirtColor`      | `string`  |          |                                                                  |      |
-| `hairColorRandom` | `boolean` | `false`  |                                                                  |      |
-| `sex`             | `string`  |          | `male, female`                                                   |      |
-| `earSize`         | `string`  |          | `small, big`                                                     |      |
-| `eyeType`         | `string`  |          | `circle, oval, smile`                                            |      |
-| `hairType`        | `string`  |          | `normal, beanie, thick, mohawk, turban, femaleLong, femaleShort` |      |
-| `noseType`        | `string`  |          | `short, long, round`                                             |      |
-| `mouthType`       | `string`  |          | `laugh, smile, peace`                                            |      |
-| `shirtType`       | `string`  |          | `hoody, short, polo`                                             |      |
-| `glassesType`     | `string`  |          | `none, round, square`                                            |      |
-| `shape`           | `string`  | `circle` | `circle, rounded, square`                                        |      |
+| key               | type      | default  | accept                                           | tips |
+| ----------------- | --------- | -------- | ------------------------------------------------ | ---- |
+| `bgColor`         | `string`  |          |                                                  |      |
+| `hatColor`        | `string`  |          |                                                  |      |
+| `faceColor`       | `string`  |          |                                                  |      |
+| `hairColor`       | `string`  |          |                                                  |      |
+| `shirtColor`      | `string`  |          |                                                  |      |
+| `hairColorRandom` | `boolean` | `false`  |                                                  |      |
+| `sex`             | `string`  |          | `male, female`                                   |      |
+| `earSize`         | `string`  |          | `small, big`                                     |      |
+| `eyeType`         | `string`  |          | `circle, oval, smile`                            |      |
+| `hatType`         | `string`  |          | `none, beanie, turban`                           |      |
+| `hairType`        | `string`  |          | `normal, thick, mohawk, femaleLong, femaleShort` |      |
+| `noseType`        | `string`  |          | `short, long, round`                             |      |
+| `mouthType`       | `string`  |          | `laugh, smile, peace`                            |      |
+| `shirtType`       | `string`  |          | `hoody, short, polo`                             |      |
+| `glassesType`     | `string`  |          | `none, round, square`                            |      |
+| `shape`           | `string`  | `circle` | `circle, rounded, square`                        |      |
 
 ## License
 

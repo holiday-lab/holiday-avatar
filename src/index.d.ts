@@ -7,12 +7,12 @@ declare type EyesType = 'circle' | 'oval' | 'smile';
 
 declare type HairType =
   | 'normal'
-  | 'beanie'
   | 'thick'
   | 'mohawk'
-  | 'turban'
   | 'femaleLong'
   | 'femaleShort';
+
+declare type HatType = 'none' | 'beanie' | 'turban';
 
 declare type NoseType = 'short' | 'long' | 'round';
 
@@ -35,12 +35,14 @@ interface Options<T> {
 
 interface Configs {
   bgColor?: string;
+  hatColor?: string;
   faceColor?: string;
   hairColor?: string;
   shirtColor?: string;
   hairColorRandom?: boolean;
   sex?: AvatarSex;
   earSize?: EarSize;
+  hatType?: HatType;
   eyeType?: EyesType;
   hairType?: HairType;
   noseType?: NoseType;
@@ -62,6 +64,7 @@ declare const Avatar: vue.DefineComponent<
     id: StringConstructor;
     class: StringConstructor;
     bgColor: StringConstructor;
+    hatColor: StringConstructor;
     faceColor: StringConstructor;
     hairColor: StringConstructor;
     shirtColor: StringConstructor;
@@ -69,6 +72,7 @@ declare const Avatar: vue.DefineComponent<
     sex: PropType<AvatarSex>;
     style: PropType<CSSProperties>;
     earSize: PropType<EarSize>;
+    hatType: PropType<HatType>;
     eyeType: PropType<EyesType>;
     hairType: PropType<HairType>;
     noseType: PropType<NoseType>;
@@ -98,11 +102,13 @@ declare const Avatar: vue.DefineComponent<
       class?: string | undefined;
       id?: string | undefined;
       bgColor?: string | undefined;
+      hatColor?: string | undefined;
       faceColor?: string | undefined;
       hairColor?: string | undefined;
       shirtColor?: string | undefined;
       sex?: AvatarSex | undefined;
       earSize?: EarSize | undefined;
+      hatType?: HatType | undefined;
       eyeType?: EyesType | undefined;
       hairType?: HairType | undefined;
       noseType?: NoseType | undefined;
@@ -137,6 +143,7 @@ export {
   GenConfig,
   GlassesType,
   HairType,
+  HatType,
   NoseType,
   Options,
   PickRandomFromList,

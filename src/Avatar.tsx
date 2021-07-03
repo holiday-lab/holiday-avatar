@@ -2,6 +2,7 @@ import { defineComponent } from 'vue';
 
 // Components
 import Ear from './Ear';
+import Hat from './Hat';
 import Face from './Face';
 import Eyes from './Eyes';
 import Hair from './Hair';
@@ -17,6 +18,7 @@ import createName from '@/utils/createName';
 // Types
 import type { CSSProperties, PropType } from 'vue';
 import type { EarSize } from './Ear';
+import type { HatType } from './Hat';
 import type { EyesType } from './Eyes';
 import type { HairType } from './Hair';
 import type { NoseType } from './Nose';
@@ -33,20 +35,22 @@ export interface Options<T> {
 }
 export interface Configs {
   bgColor?: string;
+  hatColor?: string;
   faceColor?: string;
   hairColor?: string;
   shirtColor?: string;
   hairColorRandom?: boolean;
   sex?: AvatarSex;
   earSize?: EarSize;
+  hatType?: HatType;
   eyeType?: EyesType;
+  shape?: AvatarShape;
   hairType?: HairType;
   noseType?: NoseType;
   mouthType?: MouthType;
   shirtType?: ShirtType;
   eyeBrowType?: EyeBrowType;
   glassesType?: GlassesType;
-  shape?: AvatarShape;
 }
 export type PickRandomFromList = <T>(data: T[], options?: Options<T>) => T;
 export type GenConfig = (configs?: Configs) => Configs;
@@ -66,14 +70,18 @@ const hairColor = [
   '#506af4',
   '#f48150',
 ];
-const hairTypeMale: HairType[] = [
-  'normal',
-  'beanie',
-  'thick',
-  'mohawk',
-  'turban',
+const hatColor = [
+  '#000',
+  '#fff',
+  '#77311d',
+  '#fc909f',
+  '#d2eff3',
+  '#506af4',
+  '#f48150',
 ];
+const hairTypeMale: HairType[] = ['normal', 'thick', 'mohawk'];
 const hairTypeFemale: HairType[] = ['normal', 'femaleLong', 'femaleShort'];
+const hatType: HatType[] = ['none', 'beanie', 'turban'];
 const eyeBrowFemale: EyeBrowType[] = ['upMale', 'upFemale'];
 const eyeType: EyesType[] = ['circle', 'oval', 'smile'];
 const noseType: NoseType[] = ['short', 'long', 'round'];
@@ -99,13 +107,16 @@ const _pickRandomFromList: PickRandomFromList = (
   data,
   { avoidList = [], usually = [] } = {},
 ) => {
-  const avoidSet = new Set(avoidList.filter((item) => Boolean(item)));
+  const avoidSet = new Set(avoidList.filter(Boolean));
   let myData = data.filter((item) => !avoidSet.has(item));
   // eslint-disable-next-line
-  const usuallyData = usually.reduce<any[]>(
-    (acc, cur) => acc.concat(new Array(ARRAY_LENGTH).fill(cur)),
-    [],
-  );
+  const usuallyData = usually
+    .filter(Boolean)
+    .reduce<any[]>(
+      (acc, cur) => acc.concat(new Array(ARRAY_LENGTH).fill(cur)),
+      [],
+    );
+  myData = myData.concat(usuallyData);
   myData = myData.concat(usuallyData);
   const amount = myData.length;
   const randomIdx = Math.floor(Math.random() * amount);
@@ -166,6 +177,12 @@ export const genConfig: GenConfig = (userConfig = {}) => {
   }
   response.hairType = myHairType;
 
+  // Hat
+  response.hatType = userConfig.hatType || _pickRandomFromList(hatType);
+  response.hatColor = userConfig.hatColor || _pickRandomFromList(hatColor);
+  const hairOrHatColor =
+    response.hatType === 'none' ? response.hairColor : response.hatColor;
+
   // EyeBrow
   let myEyeBrowType: EyeBrowType = userConfig.eyeBrowType || 'upMale';
   if (!userConfig.eyeBrowType && response.sex === 'female') {
@@ -176,13 +193,13 @@ export const genConfig: GenConfig = (userConfig = {}) => {
   // Shirt Color
   response.shirtColor =
     userConfig.shirtColor ||
-    _pickRandomFromList(shirtColor, { avoidList: [response.hairColor] });
+    _pickRandomFromList(shirtColor, { avoidList: [hairOrHatColor] });
 
   // Background Color
   response.bgColor =
     userConfig.bgColor ||
     _pickRandomFromList(bgColor, {
-      avoidList: [response.hairColor, response.shirtColor],
+      avoidList: [hairOrHatColor, response.shirtColor],
     });
 
   return response;
@@ -195,6 +212,7 @@ export default defineComponent({
     id: String,
     class: String,
     bgColor: String,
+    hatColor: String,
     faceColor: String,
     hairColor: String,
     shirtColor: String,
@@ -202,6 +220,7 @@ export default defineComponent({
     sex: String as PropType<AvatarSex>,
     style: Object as PropType<CSSProperties>,
     earSize: String as PropType<EarSize>,
+    hatType: String as PropType<HatType>,
     eyeType: String as PropType<EyesType>,
     hairType: String as PropType<HairType>,
     noseType: String as PropType<NoseType>,
@@ -261,11 +280,20 @@ export default defineComponent({
             }}
           >
             <Face color={config.faceColor as string} />
-            <Hair
-              color={config.hairColor}
-              type={config.hairType}
-              colorRandom={props.hairColorRandom}
-            />
+            {(() => {
+              switch (config.hatType) {
+                case 'none':
+                  return (
+                    <Hair
+                      color={config.hairColor}
+                      type={config.hairType}
+                      colorRandom={props.hairColorRandom}
+                    />
+                  );
+                default:
+                  return <Hat color={config.hatColor} type={config.hatType} />;
+              }
+            })()}
 
             {/* Face Detail */}
             <div
