@@ -1,10 +1,10 @@
-English | [简体中文](./README_zh-CN.md)
+[English](./README.md) | 简体中文
 
 # holiday-avatar
 
-## Introduction
+## 介绍
 
-Vue library for generating nice user avatar. (Inspired by react-nice-avatar)
+用于生成炫酷用户头衔的 Vue 组件。（灵感来自 react-nice-avatar）
 
 [![Version](http://img.shields.io/npm/v/holiday-avatar.svg)](https://www.npmjs.org/package/react-nice-avatar)
 [![npm download][download-image]][download-url]
@@ -19,30 +19,30 @@ Vue library for generating nice user avatar. (Inspired by react-nice-avatar)
     </a>
 </div>
 
-## Online Editor / Preview
+## 在线编辑 / 预览
 
 - https://nice-avatar.chilllab.io/
 
-## Assets
+## 资源
 
-- Designer: [@Micah](https://www.figma.com/@Micah) on Figma
-- Figma Files: [Avatar Illustration System](https://www.figma.com/community/file/829741575478342595)
+- 设计师：Figma 的 [@Micah](https://www.figma.com/@Micah)
+- Figma 文件：[头像插画系统](https://www.figma.com/community/file/829741575478342595)
 
-## Installation
+## 安装
 
 ```bash
 npm install holiday-avatar
-# or
+# 或
 yarn add holiday-avatar
-# or
+# 或
 pnpm install holiday-avatar
 ```
 
-## Usage
+## 使用方法
 
-### Import Directly (Recommended)
+### 直接引入（推荐）
 
-You can import component directly and use it. In this form, only components imported will be bundled.
+你可以直接导入组件并使用它。这种情况下，只有导入的组件才会被打包。
 
 ```vue
 <template>
@@ -61,7 +61,7 @@ export default defineComponent({
 </script>
 ```
 
-or
+或者
 
 ```vue
 <template>
@@ -80,9 +80,9 @@ export default defineComponent({
 </script>
 ```
 
-### Install Globally (Not Recommended)
+### 全局安装（不推荐）
 
-No tree-shaking. Bundle will have redundant codes.
+失去 tree-shaking 的能力，打包有冗余代码。
 
 ```ts
 import { createApp } from 'vue';
@@ -92,7 +92,7 @@ import Avatar from 'holiday-avatar';
 createApp(App).use(Avatar).mount('#app');
 ```
 
-After the installation. You can use all the components in you SFC like this.
+安装后，你可以这样在 SFC 中使用全部组件。
 
 ```vue
 <template>
@@ -100,7 +100,7 @@ After the installation. You can use all the components in you SFC like this.
 </template>
 ```
 
-or
+或者
 
 ```vue
 <template>
@@ -108,9 +108,9 @@ or
 </template>
 ```
 
-### Generate Config
+### 生成配置
 
-Generate random config, the config can be saved into your database to use later.
+生成随机配置，你可以将其保存到你的数据库中以便后续使用。
 
 ```vue
 <template>
@@ -136,7 +136,7 @@ export default defineComponent({
 </script>
 ```
 
-If you need to customize the configuration, there are two ways to provide you with the ability to customize.
+如果你需要自定义配置，有两种方式为你提供了自定义配置的能力。
 
 ```vue
 <template>
@@ -152,7 +152,7 @@ export default defineComponent({
     HldAvatar: Avatar,
   },
   setup() {
-    // You can also pass in other options in the option list below. e.g. `{ sex: 'female', eyeType: 'smile' }`
+    // 你也可以传入在下面的选项列表中的其他选项 例如 `{ sex: 'female', eyeType: 'smile' }`
     const config = genConfig({ bgColor: '#000' });
 
     return {
@@ -167,7 +167,7 @@ or
 
 ```vue
 <template>
-  <!-- You can also pass in other options in the option list below with kebab-case. e.g. `sex="female" eye-type="smile"` -->
+  <!-- 你也可以使用 kebab-case 的形式传入在下面的选项列表中的其他选项 例如 `sex="female" eye-type="smile"` -->
   <HldAvatar v-bind="{ ...config }" bg-color="#000" />
 </template>
 
@@ -190,11 +190,11 @@ export default defineComponent({
 </script>
 ```
 
-> **NOTE: The latter option will override the previous!**
+> **注意：位置处于后面的选项将会覆盖前面的！**
 
 ```vue
 <template>
-  <!-- `bg-color` will be overridden as `#fff` -->
+  <!-- `bg-color` 将会被覆盖为 `#fff` -->
   <HldAvatar v-bind="{ ...config }" bg-color="#fff" />
 </template>
 
@@ -217,11 +217,11 @@ export default defineComponent({
 </script>
 ```
 
-Same as above.
+同上
 
 ```vue
 <template>
-  <!-- `bg-color` will be overridden as `#000` -->
+  <!-- `bg-color` 将会被覆盖为 `#000` -->
   <HldAvatar bg-color="#fff" v-bind="{ ...config }" />
 </template>
 
@@ -244,11 +244,11 @@ export default defineComponent({
 </script>
 ```
 
-## Options
+## 选项列表
 
-The options can be passed into `genConfig` or as Vue props.
+选项可以传入 `genConfig` 或者作为 Vue 组件的 `props`。
 
-| key               | type      | default  | accept                                           | tips |
+| 名称              | 类型      | 默认值   | 可选值                                           | 备注 |
 | ----------------- | --------- | -------- | ------------------------------------------------ | ---- |
 | `bgColor`         | `string`  |          |                                                  |      |
 | `hatColor`        | `string`  |          |                                                  |      |
